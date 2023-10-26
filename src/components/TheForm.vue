@@ -2,15 +2,15 @@
   <form @submit.prevent="submitData">
     <div class="form-control">
       <label for="user-name">Your Name</label>
-      <input id="user-name" name="user-name" type="text"  v-model="userName"/>
+      <input id="user-name" name="user-name" type="text"  v-model.trim="userName"/>
     </div>
     <div class="form-control">
       <label for="age">Your Age (Years)</label>
-      <input id="age" name="age" type="number" />
+      <input id="age" name="age" type="number" v-model.number="userAge" />
     </div>
     <div class="form-control">
       <label for="referrer">How did you hear about us?</label>
-      <select id="referrer" name="referrer">
+      <select id="referrer" name="referrer" v-model="refrerr">
         <option value="google">Google</option>
         <option value="wom">Word of mouth</option>
         <option value="newspaper">Newspaper</option>
@@ -54,6 +54,9 @@
 
 <script>
 
+const log=console.log;
+
+
 export default{
 
   
@@ -66,7 +69,10 @@ export default{
 
 
       userName:'',
-
+      userAge:null,
+      refrerr:'newspaper',
+      interest:[],
+      how:null,
 
 
     }
@@ -74,11 +80,18 @@ export default{
 
   methods:{
 
-submitData(){
+   submitData(){
 
-console.log('userName:', this.userName);
+     log('userName:', this.userName);
 
-this.userName='';
+     this.userName='';
+     log('userAge:',this.userAge);
+     this.userAge=null;
+     log('reffer:',this.refrerr);
+     log('how',this.how);
+     log('interest',this.interest);
+     this.how=null;
+     this.interest=[];
 }
 
   }
