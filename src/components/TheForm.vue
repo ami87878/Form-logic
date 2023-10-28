@@ -19,7 +19,7 @@
     <div class="form-control">
       <h2>What are you interested in?</h2>
       <div>
-        <input id="interest-news" name="interest" type="checkbox" v-model="interest" />
+        <input id="interest-news" name="interest" type="checkbox" value="news" v-model="interest" />
         <label for="interest-news">News</label>
       </div>
       <div>
