@@ -1,8 +1,9 @@
 <template>
   <form @submit.prevent="submitData">
-    <div class="form-control">
+    <div class="form-control" :class="{invalidClass:invalid}">
       <label for="user-name">Your Name</label>
-      <input id="user-name" name="user-name" type="text"  v-model.trim="userName"/>
+      <input id="user-name" name="user-name" type="text"  v-model.trim="userName" @blur="validatorName" />
+      <p v-if="invalid">please enter name</p>
     </div>
     <div class="form-control">
       <label for="age">Your Age (Years)</label>
@@ -81,7 +82,7 @@ export default{
       interest:[],
       how:null,
       confirm:false,
-
+      invalid:false,
 
     }
   },
@@ -111,6 +112,13 @@ export default{
      log('confirm:',this.confirm);
 
      this.confirm=false;
+},
+
+validatorName(){
+
+this.userName==='' ? this.invalid=true : this.invalid=false;
+
+
 }
 
   }
@@ -134,6 +142,16 @@ form {
 
 .form-control {
   margin: 0.5rem 0;
+}
+.form-control.invalidClass input,.form-control.invalidClass input:focus{
+
+border-color:red ;
+
+}
+.form-control.invalidClass label ,p{
+
+color:red ;
+
 }
 
 label {
