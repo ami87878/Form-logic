@@ -77,7 +77,7 @@ export default{
   
   components:{
 
-    RatingControl,
+    RatingControl, 
 
 
 
@@ -145,6 +145,9 @@ this.userName==='' ? this.invalid=true : this.invalid=false;
 </script>
 
 <style scoped>
+
+
+
 form {
   margin: 2rem auto;
   max-width: 40rem;

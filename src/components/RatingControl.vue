@@ -1,8 +1,8 @@
 <template>
     <ul>
-        <li><button type="button">Poor</button></li>
-        <li><button type="button">Avrage</button></li>
-        <li><button type="button">Great</button></li>
+        <li :class="{active:activeable==='Poor'}"><button @click='actived(Poor)' type="button">Poor</button></li>
+        <li :class="{active:activeable==='Avrage'}"><button  @click='actived(Avrage)'   type="button">Avrage</button></li>
+        <li :class="{active:activeable==='Great'}"><button    @click='actived(Great)'  type="button">Great</button></li>
     </ul>
 </template>
 
@@ -14,6 +14,9 @@ export default {
     data() {
         return {
             
+
+            activeable:null,
+
         };
     },
 
@@ -23,11 +26,35 @@ export default {
 
     methods: {
         
+
+        actived(option){
+
+           this.activeable=option;  
+        
+
+        }
     },
 };
 </script>
 
 <style lang="css" scoped>
+
+
+.active{
+
+border-color: #920965;
+
+
+}
+
+
+
+.active button{
+
+
+color: #920965;
+
+}
     ul{
 
         list-style: none;
