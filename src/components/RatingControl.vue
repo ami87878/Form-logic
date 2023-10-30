@@ -3,7 +3,7 @@
     <ul>
         <li :class="{active:activeable==='Poor'}"><button    @click='actived(Poor)' type="button">Poor</button></li>
         <li :class="{active:activeable==='Avrage'}"><button  @click='actived(Avrage)' type="button">Avrage</button></li>
-        <li :class="{active:activeable==='Great'}"><button    @click='actived(Great)'type="button">Great</button></li>
+        <li :class="{active:activeable==='Great'}"><button    @click='actived(Great)' type="button">Great</button></li>
     </ul>
 
 </template>
