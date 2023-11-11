@@ -1,9 +1,9 @@
 <template>
 
     <ul>
-        <li :class="{active:activeable==='Poor'}"><button    @click='actived(Poor)' type="button">Poor</button></li>
-        <li :class="{active:activeable==='Avrage'}"><button  @click='actived(Avrage)' type="button">Avrage</button></li>
-        <li :class="{active:activeable==='Great'}"><button    @click='actived(Great)' type="button">Great</button></li>
+        <li :class="{ active:activeable===poor}"><button    @click="actived(poor)"  type="button">Poor</button></li>
+        <li :class="{active:activeable===avrage}"><button  @click='actived(avrage)' type="button">Avrage</button></li>
+        <li :class="{ active:activeable===great}"><button    @click='actived(great)' type="button">Great</button></li>
     </ul>
 
 </template>
@@ -38,7 +38,8 @@ export default {
         actived(option){
 
            this.activeable=option;  
-        
+             
+            console.log('this is an option',this.activeable);
 
         }
     },

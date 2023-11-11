@@ -1,9 +1,9 @@
 <template>
   <form @submit.prevent="submitData">
-    <div class="form-control" :class="{invalidClass:invalid}">
+    <div class="form-control" :class="{invalidClass:invalid==='invalid'}">
       <label for="user-name">Your Name</label>
       <input id="user-name" name="user-name" type="text"  v-model.trim="userName" @blur="validatorName" />
-      <p v-if="invalid">please enter name</p>
+      <p v-if="invalid==='invalid'">please enter name</p>
     </div>
     <div class="form-control">
       <label for="age">Your Age (Years)</label>
@@ -96,7 +96,7 @@ export default{
       interest:[],
       how:null,
       confirm:false,
-      invalid:false,
+      invalid:'pending',
 
     }
   },
@@ -130,7 +130,20 @@ export default{
 
 validatorName(){
 
-this.userName==='' ? this.invalid=true : this.invalid=false;
+
+  if(this.userName===''){
+
+      this.invalid='invalid';
+
+
+  }
+
+  else{
+
+     this.invalid='valid'
+
+  }
+
 
 
 }
