@@ -1,9 +1,20 @@
 <template>
 
     <ul>
-        <li :class="{ active:activeable===poor}"><button    @click="actived(poor)"  type="button">Poor</button></li>
-        <li :class="{active:activeable===avrage}"><button  @click='actived(avrage)' type="button">Avrage</button></li>
-        <li :class="{ active:activeable===great}"><button    @click='actived(great)' type="button">Great</button></li>
+        <li :class="{ active:activeable==='poor'}">
+
+            <button    @click="actived('poor')"  type="button">Poor</button>
+        </li>
+
+        <li :class="{active:activeable==='avrage'}">
+
+            <button  @click='actived("avrage")' type="button">Avrage</button>
+        </li>
+
+        <li :class="{ active:activeable==='great'}">
+
+        <button    @click='actived("great")' type="button">Great</button>
+    </li>
     </ul>
 
 </template>
